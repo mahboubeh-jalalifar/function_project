@@ -1,41 +1,32 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-####
+#SUM
+def SumNumber (request):
+    number1=10
+    number2=20
+    message=number1+number2
+    return HttpResponse (f"The sum number is:{message}")
+    
+#NickName
+def FirstLastName (request):
+    name="Mahboubeh"
+    lastname= "Jalalifar"
+    return HttpResponse (f"My name is, {name} {lastname}")
 
-SumNumber=lambda Number1,Number2:Number1+Number2
-PrintMessage= print (f"The number is:{SumNumber(20,40)}")
-print (PrintMessage)
+#Average
+def average (request):
+    ave=(5+5+5)//3
+    return HttpResponse (f"The average score is:{ave}")
 
-####
-class FirstLastName:
-    def __init__(self,name,nickname):
-        self.name=name
-        self.nickname=nickname
-    def PrintString (self):
-        print (f"My name is {self.name} {self.nickname}")
-variable=FirstLastName ("Mahboubeh","Jalalifar")
-variable.PrintString()
 
-####
-def average (Num1,Num2,Num3):
-    ave=(Num1+Num2+Num3)//3
-    return (f"The average score is:{ave}")
-final=average (5,5,5)
-print (final)
+#exponent
+def exponent (request):
+    exnum=4**2
+    return HttpResponse (f"The Exponentiation is:{exnum}")
 
-####
-def exponent (Num4):
-    exnum=(Num4)**2
-    return (f"The Exponentiation is:{exnum}")
-ex=exponent (5)
-print (ex)
-
-####     
-class Even :
-    number=0
-    def even (self,x):
-        self.number=x
-        for char in range (0,x,2):
-            print (char)
-var=Even()
-var.even(20)
+#even    
+def even (request):
+    n= 20
+    message2=[str (char) for char in range (0,n,2)]
+    n=n+1
+    return HttpResponse (f"The even numbers is:{message2}")
